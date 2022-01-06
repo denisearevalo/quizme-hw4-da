@@ -1,22 +1,22 @@
 # quizme-hw4-da
-Homework 4 develop a quiz
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
 
-## Acceptance Criteria
+This is a Javascript based quiz game.
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+No installation required
+
+ Upon opening the link. The page will have a set of instructions and  ask if the 
+ user would like to Start to play. Once the user selects the start button a timer 
+ will start to count down from 60seconds. In those 60 seconds the user will need 
+ to answer 4 questions correctly to get the highest score. The score is stored in
+  localStorage. If the user gets an answer correct, a message will appear stating 
+  correct, if not then the user will get a message showing incorrect. 
+ Once complete the user can enter their name to gauge their score with other users.
+
+HTML, CSS and Javascript were utilized for this Quiz
+
+Demo to come, meeting with a tutor to complete assignment.
+
+No license "WIP"
+
+Kindly, Denise A
+

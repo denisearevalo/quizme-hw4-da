@@ -1,96 +1,95 @@
-// var timerEl = document.getElementById ("countdown");
-// const startButton = document.getElementById ("start-btn");
-
-// if startButton = 
-
 const startButton = document.getElementById("start-btn");
-
-// const answerButton = document.getElementById("answer-btn");
-startButton.addEventListener("click", startGame);
-
-function startGame() {
-    // console.log('Started')
-}
+var countdown = document.getElementById("timer");
+var secondsLeft = 60;
 const nextButton = document.getElementById("next-btn");
+const question = document.getElementById("question");
+const a = document.getElementById("answer-abtn")
+const b = document.getElementById("answer-bbtn")
+const c = document.getElementById("answer-cbtn")
+const d = document.getElementById("answer-dbtn")
 
-nextButton.addEventListener("click", getNextQuestion);
-
-let currentQuestion = {}
-let correctAnswer = true
-let score = 0
-let availableQuestions = []
-
-let question = [
+const questions = [
     {
         question: "What does JS stand for?",
-        answer: {
             a: "Just Science",
             b: "Jumping Skittles",
             c: "Java Sucks",
             d: "Java Script",
-            answer: 4,
-        }
+        correctAnswer: "Java Script",
     },
     {
         question: "Which is true for const?",
-        answer: [
-            {text: "Can be used to redeclare the variable.", correct:false},
-            {text: "Capitalizes variables.", correct:false},
-            {text: "Cannot be reassigned.", correct:true},
-            {text: "Only used for HTML.", correct:false},
-        ]
-
+            a: "Can be used to redeclare the variable.", 
+            b: "Capitalizes variables.", 
+            c: "Cannot be reassigned.", 
+            d: "Only used for HTML.", 
+        correctAnswer: "Cannot be reassigned.",
     },
     {
-        question: ["What is a boolean function?"],
-        answer: [
-            {text: "Finds out if something is greater than something else.", correct:false},
-            {text: "A cool jellybean flavor.", correct:false},
-            {text: "Finds out if an expression or variable is true.", correct:true},
-            {text: "Not the basis of JS comparisons and conditions", correct:false},
-        ]
-
+        question: "What is a boolean function?",
+            a: "Finds out if something is greater than something else.", 
+            b: "A cool jellybean flavor.", 
+            c: "Finds out if an expression or variable is true.", 
+            d: "Not the basis of JS comparisons and conditions", 
+        correctAnswer: "Finds out if an expression or variable is true.",
     },
     {
-        question: ["If HTML is the bone, CSS is the skin, then what is JS?"],
-        answer: [
-            {text: "The phalanges.", correct:false},
-            {text: "The muscle.", correct:true},
-            {text: "The pinky toe.", correct:false},
-            {text: "The accessories.", correct:true},
-        ]
+        question: "If HTML is the bone, CSS is the skin, then what is JS?",
+            a: "The phalanges.", 
+            b: "The muscle.", 
+            c: "The pinky toe.", 
+            d: "The accessories.", 
+        correctAnswer: "The muscle.",
+    }]
+// const answerButton = document.getElementById("answer-btn");
 
-    }
-]
-
-const scorePoints =20
-const MaxQuestions= 4
-
-
-function getNextQuestion() {
-    // console.log('Next')
-    // will keep track of score
-    if(availableQuestions.length === 0 || questionCounter > MaxQuestions){
-        localStorage.setItem('mostRecentScore', score)
-        return window.location.assign('/end.html')
-    }
-    // how to calculate value of question index to ask
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
-    currentQuestion = availableQuestions[questionsIndex]
-    question.innerText = currentQuestion.question
-    choices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choice' + number]
-    })
-    availableQuestions.splice(questionIndex, 1)
+function startGame() {
+    
+    startButton.classList.add("hidden")
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        // this sets the time on the screen to what is declared
+        countdown.textContent = "timeleft:" + secondsLeft;
+    
+        if(secondsLeft === 0) {
+          // Stops execution of action at set interval
+          clearInterval(timerInterval);
+          // Calls function to create and append image
+        //   sendMessage();
+        }
+    
+      }, 1000);
+   getNextQuestion();
 }
 
-// answerButton.addEventListener("click", selectAnswer);
+// let currentQuestion = 0
+// let correctAnswer = true
+// let score = 0
+// let availableQuestions = []
 
-// function selectAnswer() {
-//     // console.log("answer")
-// }
+function getNextQuestion() {
+   question.textContent = questions.question;
+    // a.textContent = questions.a;
+    // b.textContent = questions.b;
+    // c.textContent = questions.c;
+    // d.textContent = questions.d;
+}
+// scores to be stored in localStorage need for for user to complete and display other scores
 
-// function selectViewScore() {
+startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", getNextQuestion);
+a.addEventListener("click", a);
+b.addEventListener("click", b);
+c.addEventListener("click", c);
+d.addEventListener("click", d);
 
-// 
+// const question = document.getElementById ("question");
+// // ["What does JS stand for?","Which is true for const?", "What is a boolean function?","If HTML is the bone, CSS is the skin, then what is JS?",]
+// const answer = document.getElementById("answer-abtn");
+// const answer = document.getElementById("answer-bbtn");
+// const answer = document.getElementById("answer-cbtn");
+// const answer = document.getElementById("answer-adtn");
+// // let currentQuestion = 0
+// // let correctAnswer = true
+// // let score = 0
+// // let availableQuestions = []

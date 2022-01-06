@@ -4,15 +4,11 @@
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-body{
-    /* justify-content: center;
-    align-items: center; */
-}
-nav {
-    justify-content:space-around;
+header {
+    justify-content:space-between;
     color: rgb(165, 84, 165);
 }
-.container{
+.welcome-container, .game-container{
     justify-content: center;
     align-items: center; 
     width: 500px;

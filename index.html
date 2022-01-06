@@ -5,31 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
     <title>JS Code Quiz</title>
 </head>
 <body>
-    <nav> 
+    <header> 
         <!-- <a href="score.html" id="score-link" >View Scores</p> -->
-        <p id="countdown">Count Down</p>
-    </nav>
-    <div class="container">
+        <p id="timer">Count Down</p>
+    </header>
+    <div class="welcome-container">
         <div>
             <h1>Ready to play?</h1>
+            <p> Answer the 4 questions in 1 minutes time.</p>
             <button id= "start-btn">Start</button>
         </div>
+    </div>
+    <div class= "game-container">
         <div id="question-container" class= "hidden"></div>
-        <h3 id= "question">Question</h3>
+        <h3 id= "question"></h3>
         <div class= "answer-container">
-            <button id="answer-btn">Answer A</button>
-            <button id="answer-btn">Answer B</button>
-            <button id="answer-btn">Answer C</button>
-            <button id="answer-btn">Answer D</button>
+            <button id="answer-abtn"></button>
+            <button id="answer-bbtn"></button>
+            <button id="answer-cbtn"></button>
+            <button id="answer-dbtn"></button>
         </div>
         <div>
             <button id= "next-btn">Next</button>
         </div>
     </div>
-    
+    <script src= 'script.js'></script>
 </body>
 </html>
