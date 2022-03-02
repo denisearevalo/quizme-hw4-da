@@ -58,10 +58,8 @@ var borderBox = document.querySelector(".borderBox");
 var secondsLeft = 76;
 var holdInterval = 0;
 var penalty = 10;
-// dynamically creates new element
 var ulCreate = document.createElement("ul");
 
-// Triggers timer on button, shows user a display on the screen
 timer.addEventListener("click", function () {
   if (holdInterval === 0) {
     holdInterval = setInterval(function () {
@@ -78,7 +76,6 @@ timer.addEventListener("click", function () {
   render(questionIndex);
 });
 
-// Renders questions and choices to page:
 function render(questionIndex) {
   questionsDiv.innerHTML = "";
   ulCreate.innerHTML = "";
@@ -95,30 +92,25 @@ function render(questionIndex) {
     listItem.addEventListener("click", compare);
   });
 }
-// checking the answers
 function compare(event) {
   var element = event.target;
 
   if (element.matches("li")) {
     var createDiv = document.createElement("div");
     createDiv.setAttribute("id", "createDiv");
-    // Correct condition
     if (element.textContent == questions[questionIndex].answer) {
       score++;
       createDiv.textContent =
         "Correct! 👏 The answer is:  " + questions[questionIndex].answer;
     } else {
-      // Will deduct seconds off secondsLeft for wrong answers
       secondsLeft = secondsLeft - penalty;
       createDiv.textContent =
         "Wrong! 💩 The correct answer is:  " + questions[questionIndex].answer;
     }
   }
-  // Question Index determines number question user is on, increments
   questionIndex++;
 
   if (questionIndex >= questions.length) {
-    // All done will append last page with user stats
     gameDone();
     createDiv.textContent =
       "Congrats 🤓, you reached the end of the quiz!" +
@@ -148,7 +140,6 @@ function gameDone() {
 
   questionsDiv.appendChild(createP);
 
-  // Calculate the time remaining and replace it with the score
   if (secondsLeft >= 0) {
     var timeRemaining = secondsLeft;
     var createP2 = document.createElement("p");
@@ -178,7 +169,7 @@ function gameDone() {
 
   questionsDiv.appendChild(createSubmit);
 
-  // Event listener to capture name and local storage for name and score
+  // Event listener to capture name for local storage 
   createSubmit.addEventListener("click", function () {
     var name = createInput.value;
 
