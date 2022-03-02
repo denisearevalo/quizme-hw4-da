@@ -2,36 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>JS Code Quiz</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubballi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Code Quiz</title>
 </head>
+
 <body>
-    <header> 
-        <!-- <a href="score.html" id="score-link" >View Scores</p> -->
-        <p id="timer">Count Down</p>
-    </header>
-    <div class="welcome-container">
-        <div>
-            <h1>Ready to play?</h1>
-            <p> Answer the 4 questions in 1 minutes time.</p>
-            <button id= "start-btn">Start</button>
+    <a href="scores.html">View Scores</a>
+    <div class="borderBox">
+        <div id="currentTime"></div>
+        <div id="questionsDiv">
+            <h3>Wanna play a simple coding quiz?</h3>
+            <h4>Try to answer the following "code-related" questions within the time limit. Keep in mind that responding with a wrong answer will take time away.</h4>
+            <ul id="choicesUl"></ul>
+            <button class=button id="startTime">Start Quiz</button>
         </div>
     </div>
-    <div class= "game-container">
-        <div id="question-container" class= "hidden"></div>
-        <h3 id= "question"></h3>
-        <div class= "answer-container">
-            <button id="answer-abtn"></button>
-            <button id="answer-bbtn"></button>
-            <button id="answer-cbtn"></button>
-            <button id="answer-dbtn"></button>
-        </div>
-        <div>
-            <button id= "next-btn">Next</button>
-        </div>
-    </div>
-    <script src= 'script.js'></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

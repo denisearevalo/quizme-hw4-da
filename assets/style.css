@@ -1,0 +1,17 @@
+* {
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Hubballi';
+  background-color: rgb(223, 196, 223);
+}
+.borderBox{
+  border-radius: 5px;
+}
+.button{
+  border-radius: 8px;
+  background-color: rgb(92, 15, 92);
+  color: rgb(247, 212, 247);
+  
+}
+
+
